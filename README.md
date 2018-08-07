@@ -18,3 +18,10 @@ JavaScript and CSS is based on [LayerStyles](https://github.com/mrflix/LayerStyl
     });
 
     $("#element").anglepicker("value", 50);
+
+
+    // Disable
+    $("#element").anglepicker("disable");
+
+    // Enable
+    $("#element").anglepicker("enable");

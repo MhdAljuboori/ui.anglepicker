@@ -16,6 +16,7 @@ $.widget("ui.anglepicker", $.ui.mouse, {
         this.setDegrees(this.options.value);
     },
     _propagate: function(name, event) {
+        if (this.options.disabled) return;
         this._trigger(name, event, this.ui());
     },
     _create: function() {
@@ -120,6 +121,8 @@ $.widget("ui.anglepicker", $.ui.mouse, {
         return degrees;
     },
     setDegreesFromEvent: function(event) {
+        if (this.options.disabled) return;
+
         var opposite = this.startOffset.y - event.pageY;
         opposite = this.options.clockwise ? opposite : -opposite;
 
