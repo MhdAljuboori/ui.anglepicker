@@ -56,7 +56,7 @@ $.widget("ui.anglepicker", $.ui.mouse, {
     },
     _mouseDrag: function(event) {
         this.setDegreesFromEvent(event);
-        this._propagate("change", event);
+        this._propagate("move", event);
     },
     _setOption: function(key, value) {
 
