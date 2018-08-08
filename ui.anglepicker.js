@@ -69,7 +69,7 @@ $.widget("ui.anglepicker", $.ui.mouse, {
             value: this.options.value
         };
     },
-    value: function(newValue) {
+    value: function(newValue, skipDispatchEvent) {
 
         if (!arguments.length) {
             return this.options.value;
@@ -78,8 +78,10 @@ $.widget("ui.anglepicker", $.ui.mouse, {
         var oldValue = this.options.value;
         this.setDegrees(newValue);
 
-        if (oldValue !== this.options.value) {
-            this._propagate("change");
+        if (!skipDispatchEvent) {
+            if (oldValue !== this.options.value) {
+                this._propagate("change");
+            }
         }
 
         return this;
